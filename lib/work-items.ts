@@ -2,6 +2,7 @@ export type WorkItem = {
   id: string;
   title: string;
   placeholderTone: string;
+  imageSrc?: string;
   role: string;
   summary: string;
   channel: string;
@@ -15,6 +16,7 @@ export const workItems: WorkItem[] = [
     id: "01",
     title: "Dermedic VietNam",
     placeholderTone: "bg-pink-100",
+    imageSrc: "/Dermedic.jpg",
     role: "Assistant Brand Manager",
     summary:
       "Managed content direction, product campaign messaging, and cross-channel execution to grow audience trust and engagement.",
@@ -30,6 +32,7 @@ export const workItems: WorkItem[] = [
     id: "02",
     title: "Skin Clinic",
     placeholderTone: "bg-zinc-100",
+    imageSrc: "/skinclinic.jpg",
     role: "Content Creator",
     summary:
       "Produced skincare-focused educational content and social storytelling to improve retention and conversion on organic campaigns.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import MouseFollower from "@/components/shared/MouseFollower";
+import SiteFooter from "@/components/shared/SiteFooter";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         <MouseFollower />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

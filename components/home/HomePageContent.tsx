@@ -52,7 +52,7 @@ export default function HomePageContent() {
 
             <Link
               href="/contact"
-              className="glow-animation inline-flex rounded-full bg-pink-500 px-6 py-2 text-sm font-medium text-white transition hover:bg-pink-600"
+              className="glow-animation inline-flex rounded-full border border-pink-500 bg-white px-6 py-2 text-sm font-medium text-pink-500 transition hover:scale-[1.2] hover:bg-pink-50"
             >
               Hire Me
             </Link>
@@ -93,8 +93,8 @@ export default function HomePageContent() {
         </section>
 
         <section className="group mt-14 rounded-3xl border border-pink-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:mt-16 sm:p-7 md:mt-20 md:p-8">
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <div>
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
+            <div className="min-w-0 lg:flex-1">
               <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">About</p>
               <h2 className="mt-2 text-3xl font-light sm:text-4xl">Who is Hailey?</h2>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 sm:text-base">
@@ -114,12 +114,16 @@ export default function HomePageContent() {
               </div>
             </div>
 
-            <FlipButtonLink href="/about" frontText="About Me" className="whitespace-nowrap" />
+            <FlipButtonLink
+              href="/about"
+              frontText="About Me"
+              className="self-start whitespace-nowrap lg:self-end"
+            />
           </div>
         </section>
 
         <section className="mt-14 sm:mt-16 md:mt-20">
-          <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mb-6 flex flex-col gap-4 sm:mb-8 md:flex-row md:items-end md:justify-between">
             <div className="space-y-3">
               <h2 className="text-3xl font-light sm:text-4xl md:text-5xl">Latest Projects</h2>
               <div className="flex items-center gap-3">
@@ -145,14 +149,23 @@ export default function HomePageContent() {
             <FlipButtonLink
               href="/work"
               frontText="All projects"
-              className="shrink-0 whitespace-nowrap self-start sm:self-end"
+              className="shrink-0 whitespace-nowrap self-start md:self-end lg:-ml-[2.8rem]"
             />
           </div>
 
           <article className="overflow-hidden rounded-3xl border border-pink-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-6">
             <Link href={`/work/${activeProject.id}`} className="group block">
               <div className="relative h-64 overflow-hidden rounded-2xl bg-pink-100 sm:h-72 md:h-80">
-                <div className={`h-full w-full ${activeProject.placeholderTone}`} />
+                {activeProject.imageSrc ? (
+                  <Image
+                    src={activeProject.imageSrc}
+                    alt={activeProject.title}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className={`h-full w-full ${activeProject.placeholderTone}`} />
+                )}
                 <span className="absolute bottom-4 right-4 rounded-xl bg-zinc-900 px-4 py-3 text-3xl leading-none text-zinc-100 sm:text-5xl">
                   {activeProject.id}
                 </span>

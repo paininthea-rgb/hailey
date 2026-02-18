@@ -41,16 +41,16 @@ body {
 }
 
 .btn-12 span {
-  background: rgb(0, 172, 238);
-  background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+  background: rgb(236, 72, 153);
+  background: linear-gradient(0deg, rgba(219, 39, 119, 1) 0%, rgba(244, 114, 182, 1) 100%);
   display: block;
   position: absolute;
   width: 130px;
   height: 40px;
   box-shadow:
     inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
-    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    7px 7px 20px 0px rgba(190, 24, 93, 0.25),
+    4px 4px 5px 0px rgba(157, 23, 77, 0.2);
   border-radius: 5px;
   margin: 0;
   text-align: center;

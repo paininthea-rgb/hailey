@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { workItems } from "@/lib/work-items";
 import HomeLogoLink from "@/components/shared/HomeLogoLink";
@@ -33,7 +34,11 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
         </div>
 
         <div className={`relative mb-6 flex h-64 items-center justify-center overflow-hidden rounded-2xl ${item.placeholderTone} sm:h-72`}>
-          <p className="text-sm font-medium text-zinc-500">Placeholder image</p>
+          {item.imageSrc ? (
+            <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
+          ) : (
+            <p className="text-sm font-medium text-zinc-500">Placeholder image</p>
+          )}
           <span className="absolute bottom-4 right-4 rounded-xl bg-zinc-900 px-4 py-3 text-3xl leading-none text-pink-100">
             {item.id}
           </span>

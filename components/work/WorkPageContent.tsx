@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { workItems } from "@/lib/work-items";
 import HomeLogoLink from "@/components/shared/HomeLogoLink";
 
@@ -29,7 +30,11 @@ export default function WorkPageContent() {
               <div
                 className={`relative mb-5 flex h-44 items-center justify-center overflow-hidden rounded-xl ${item.placeholderTone}`}
               >
-                <p className="text-sm font-medium text-zinc-500">Placeholder image</p>
+                {item.imageSrc ? (
+                  <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
+                ) : (
+                  <p className="text-sm font-medium text-zinc-500">Placeholder image</p>
+                )}
                 <span className="absolute bottom-3 right-3 rounded-lg bg-zinc-900 px-3 py-2 text-xl leading-none text-pink-100">
                   {item.id}
                 </span>
