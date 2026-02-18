@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { workItems } from "@/lib/work-items";
 import HomeLogoLink from "@/components/shared/HomeLogoLink";
 import FlipButtonLink from "@/components/shared/FlipButtonLink";
@@ -14,6 +16,7 @@ export default function HomePageContent() {
     { label: "Assitant Brand Manager", tone: "accent" },
     { label: "Content Creator", tone: "accent" },
     { label: "Product Review", tone: "dark" },
+    { label: "Voice talent", tone:"dark"}
   ];
 
   const activeProject = workItems[activeProjectIndex];
@@ -96,11 +99,9 @@ export default function HomePageContent() {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
             <div className="min-w-0 lg:flex-1">
               <p className="text-sm font-medium uppercase tracking-wide text-zinc-500">About</p>
-              <h2 className="mt-2 text-3xl font-light sm:text-4xl">Who is Hailey?</h2>
+              <h2 className="mt-2 text-3xl font-light sm:text-4xl">Welcome to my vanity! I'm Hailey.</h2>
               <p className="mt-3 max-w-3xl text-sm leading-7 text-zinc-600 sm:text-base">
-                Hailey is a beauty and skincare content creator focused on practical product reviews,
-                simple routines, and real results. Her content is built to help audiences make better
-                decisions with confidence.
+                I believe beauty should be transparent and accessible. As a skincare KOC, I bridge the gap between brands and beauty lovers by providing high-trust, hands-on reviews. My mission is simple: helping you find your holy grail products through honest experiences.
               </p>
 
               <div className="max-h-0 overflow-hidden border-pink-200 opacity-0 transition-all duration-300 group-hover:mt-4 group-hover:max-h-40 group-hover:border-t group-hover:pt-4 group-hover:opacity-100 group-focus-within:mt-4 group-focus-within:max-h-40 group-focus-within:border-t group-focus-within:pt-4 group-focus-within:opacity-100">
@@ -126,31 +127,40 @@ export default function HomePageContent() {
           <div className="mb-6 flex flex-col gap-4 sm:mb-8 md:flex-row md:items-end md:justify-between">
             <div className="space-y-3">
               <h2 className="text-3xl font-light sm:text-4xl md:text-5xl">Latest Projects</h2>
-              <div className="flex items-center gap-3">
+            </div>
+
+            <div className="flex items-center gap-3 self-start md:self-end">
+              <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={showPreviousProject}
                   aria-label="Previous project"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-xl text-zinc-700 transition hover:bg-pink-100"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-xl text-zinc-700 transition hover:bg-pink-100"
                 >
-                  ←
+                  <FontAwesomeIcon
+                    icon={faAngleLeft}
+                    className="transition-transform duration-200 group-hover:-translate-x-0.5"
+                  />
                 </button>
                 <button
                   type="button"
                   onClick={showNextProject}
                   aria-label="Next project"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-xl text-zinc-700 transition hover:bg-pink-100"
+                  className="group inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-800 text-xl text-zinc-700 transition hover:bg-pink-100"
                 >
-                  →
+                  <FontAwesomeIcon
+                    icon={faAngleRight}
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                  />
                 </button>
               </div>
-            </div>
 
-            <FlipButtonLink
-              href="/work"
-              frontText="All projects"
-              className="shrink-0 whitespace-nowrap self-start md:self-end lg:-ml-[2.8rem]"
-            />
+              <FlipButtonLink
+                href="/work"
+                frontText="All projects"
+                className="shrink-0 whitespace-nowrap"
+              />
+            </div>
           </div>
 
           <article className="overflow-hidden rounded-3xl border border-pink-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-6">

@@ -76,7 +76,7 @@ export default function ContactForm() {
 
         <h1 className="mt-4 text-3xl font-light sm:text-4xl">Contact Hailey</h1>
         <p className="mt-2 max-w-xl text-sm text-zinc-600 sm:text-base">
-          Send your message and it will be saved in Firebase. Email automation can be added later.
+          Send your message or text me I will contact you as soon as possible. Looking forward to hearing from you!
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 grid gap-4 md:grid-cols-2">
@@ -90,6 +90,7 @@ export default function ContactForm() {
               value={name}
               onChange={(event) => setName(event.target.value)}
               required
+              placeholder="Hailey Dinh"
               className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
             />
           </div>
@@ -104,6 +105,7 @@ export default function ContactForm() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               required
+              placeholder="hailey@example.com"
               className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
             />
           </div>
@@ -118,6 +120,7 @@ export default function ContactForm() {
               value={phone}
               onChange={(event) => setPhone(event.target.value)}
               required
+              placeholder="+1 (555) 123-4567"
               className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
             />
           </div>
@@ -131,6 +134,7 @@ export default function ContactForm() {
               value={message}
               onChange={(event) => setMessage(event.target.value)}
               required
+              placeholder="Write your message here..."
               rows={5}
               className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
             />

@@ -23,15 +23,28 @@ export default function AboutPageContent() {
           <article className="rounded-2xl border border-pink-200 bg-pink-50 p-5">
             <h2 className="text-xl font-medium">Profile</h2>
             <p className="mt-3 text-sm leading-7 text-zinc-600">
-              Hailey is a skincare-focused creator and assistant brand manager with experience in
-              educational content, social campaign planning, and product review storytelling.
+              Authenticity is my aesthetic. I specialize in creating relatable, high-engagement skincare content that prioritizes truth over trends. From deep-dives into ingredients to daily "get ready with me" routines, I’m here to help you shop smarter.
+            </p>
+          </article>
+
+          <article className="rounded-2xl border border-pink-200 bg-pink-50 p-5">
+            <h2 className="text-xl font-medium">Education</h2>
+            <p className="mt-3 text-sm leading-7 text-zinc-600">
+              I hold a degree in Marketing from the University of California, Berkeley. My education provided a strong foundation in consumer behavior and digital strategy, which I apply to my content creation process to connect with audiences effectively.
+            </p>
+          </article>
+
+          <article className="rounded-2xl border border-pink-200 bg-pink-50 p-5">
+            <h2 className="text-xl font-medium">Background</h2>
+            <p className="mt-3 text-sm leading-7 text-zinc-600">
+              With a background in digital marketing and a passion for skincare, I launched my content journey in 2020. Since then, I’ve built a loyal community of beauty enthusiasts who trust my honest reviews and practical advice.
             </p>
           </article>
 
           <article className="rounded-2xl border border-pink-200 bg-pink-50 p-5">
             <h2 className="text-xl font-medium">Approach</h2>
             <p className="mt-3 text-sm leading-7 text-zinc-600">
-              Her work combines clear communication, audience-first messaging, and practical product
+              My work combines clear communication, audience-first messaging, and practical product
               testing to build trust and improve content performance across social channels.
             </p>
           </article>

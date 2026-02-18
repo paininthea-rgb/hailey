@@ -2,19 +2,21 @@ import Link from "next/link";
 
 const socialLinks = [
   {
-    label: "Instagram",
-    href: "https://instagram.com",
+    label: "Facebook",
+    href: "https://www.facebook.com/dear.halanlittlecastle",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
-        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+        <path
+          d="M13.5 21v-7h2.5l.5-3h-3V9.5c0-.87.3-1.5 1.7-1.5H17V5.2c-.3-.04-1.2-.2-2.4-.2-2.4 0-4 1.46-4 4.14V11H8v3h2.2v7h3.3z"
+          fill="currentColor"
+        />
       </svg>
     ),
   },
+
   {
     label: "TikTok",
-    href: "https://tiktok.com",
+    href: "https://www.tiktok.com/@_halanatme",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
         <path
@@ -34,16 +36,21 @@ const socialLinks = [
       </svg>
     ),
   },
+  
   {
-    label: "YouTube",
-    href: "https://youtube.com",
+    label: "Instagram",
+    href: "https://instagram.com",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-        <rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" strokeWidth="2" />
-        <path d="M10 9.5l5 2.5-5 2.5v-5z" fill="currentColor" />
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
       </svg>
     ),
   },
+  
+  
+  
 ];
 
 export default function SiteFooter() {
@@ -74,14 +81,14 @@ export default function SiteFooter() {
             <h2 className="text-base font-semibold text-zinc-900">Contact</h2>
             <ul className="mt-3 space-y-2 text-sm text-zinc-600">
               <li>
-                Email: <a href="mailto:hello@hailey.com" className="transition hover:text-pink-600">hello@hailey.com</a>
+                Email: <a href="mailto:dinhhuonglann@gmail.com" className="transition hover:text-pink-600">dinhhuonglann@gmail.com</a>
               </li>
               <li>
                 Phone: <a href="tel:+15551234567" className="transition hover:text-pink-600">+1 (555) 123-4567</a>
               </li>
               <li>
                 <Link href="/contact" className="font-medium text-zinc-900 transition hover:text-pink-600">
-                  Go to contact page
+                  Send me a message!
                 </Link>
               </li>
             </ul>
