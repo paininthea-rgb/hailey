@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff1f5;
-  --foreground: #18181b;
+  --background: #0f0f12;
+  --foreground: #f4f4f5;
 }
 
 @theme inline {
@@ -18,118 +18,66 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-@keyframes glow {
-  50% {
-    box-shadow: 0 0 40px hsl(12, 100%, 60%);
-  }
+.site-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(239, 68, 68, 0.24), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(244, 63, 94, 0.18), transparent 30%),
+    #0f0f12;
 }
 
-.glow-animation {
-  animation: glow 2.2s ease-in-out infinite;
+.site-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(2px);
 }
 
-.btn-12 {
-  position: relative;
-  border: none;
-  box-shadow: none;
-  width: 130px;
-  height: 40px;
-  line-height: 42px;
-  -webkit-perspective: 230px;
-  perspective: 230px;
-  display: inline-block;
-}
-
-.btn-12 span {
-  background: rgb(236, 72, 153);
-  background: linear-gradient(0deg, rgba(219, 39, 119, 1) 0%, rgba(244, 114, 182, 1) 100%);
-  display: block;
-  position: absolute;
-  width: 130px;
-  height: 40px;
-  box-shadow:
-    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(190, 24, 93, 0.25),
-    4px 4px 5px 0px rgba(157, 23, 77, 0.2);
-  border-radius: 5px;
-  margin: 0;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid #f43f5e;
+  background: linear-gradient(90deg, #f43f5e, #ef4444);
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: #fff;
-  font-size: 0.875rem;
-  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.btn-12 span:nth-child(1) {
-  box-shadow:
-    -7px -7px 20px 0px #fff9,
-    -4px -4px 5px 0px #fff9,
-    7px 7px 20px 0px #0002,
-    4px 4px 5px 0px #0001;
-  -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
-  transform: rotateX(90deg);
-  -webkit-transform-origin: 50% 50% -20px;
-  -moz-transform-origin: 50% 50% -20px;
-  transform-origin: 50% 50% -20px;
+.brand-button:hover,
+.brand-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(239, 68, 68, 0.35);
 }
 
-.btn-12 span:nth-child(2) {
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-  -webkit-transform-origin: 50% 50% -20px;
-  -moz-transform-origin: 50% 50% -20px;
-  transform-origin: 50% 50% -20px;
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: transparent;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-12:hover span:nth-child(1),
-.btn-12:focus-visible span:nth-child(1) {
-  box-shadow:
-    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
-    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  -webkit-transform: rotateX(0deg);
-  -moz-transform: rotateX(0deg);
-  transform: rotateX(0deg);
+.ghost-button:hover,
+.ghost-button:focus-visible {
+  border-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
-.btn-12:hover span:nth-child(2),
-.btn-12:focus-visible span:nth-child(2) {
-  box-shadow:
-    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
-    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  color: transparent;
-  -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-}
-
-.custom-cursor-dot,
-.custom-cursor-ring {
-  display: none;
-  pointer-events: none;
-  will-change: transform;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  body.custom-cursor-enabled,
-  body.custom-cursor-enabled * {
-    cursor: none !important;
-  }
-
-  body.custom-cursor-enabled input,
-  body.custom-cursor-enabled textarea {
-    cursor: text !important;
-  }
-
-  body.custom-cursor-enabled .custom-cursor-dot,
-  body.custom-cursor-enabled .custom-cursor-ring {
-    display: block;
-  }
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.28);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  color: rgba(244, 244, 245, 0.9);
+  text-align: center;
 }

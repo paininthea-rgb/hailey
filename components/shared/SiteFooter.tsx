@@ -55,19 +55,19 @@ const socialLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-pink-200 bg-white/80">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-8 sm:px-8 md:px-10 lg:px-14">
+    <footer className="border-t border-white/10 bg-[#0b0b0f]">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-8 md:px-10 lg:px-14">
         <div className="grid gap-8 sm:grid-cols-2">
           <section className="text-center sm:text-left">
-            <h2 className="text-base font-semibold text-zinc-900">Social Media</h2>
-            <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+            <h2 className="text-base font-semibold text-zinc-100">Social Media</h2>
+            <ul className="mt-3 space-y-2 text-sm text-zinc-300">
               {socialLinks.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 transition hover:text-pink-600 sm:justify-start"
+                    className="inline-flex items-center justify-center gap-2 transition hover:text-rose-400 sm:justify-start"
                   >
                     <span>{item.icon}</span>
                     {item.label}
@@ -78,16 +78,16 @@ export default function SiteFooter() {
           </section>
 
           <section className="text-center sm:text-left">
-            <h2 className="text-base font-semibold text-zinc-900">Contact</h2>
-            <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+            <h2 className="text-base font-semibold text-zinc-100">Contact</h2>
+            <ul className="mt-3 space-y-2 text-sm text-zinc-300">
               <li>
-                Email: <a href="mailto:dinhhuonglann@gmail.com" className="transition hover:text-pink-600">dinhhuonglann@gmail.com</a>
+                Email: <a href="mailto:dinhhuonglann@gmail.com" className="transition hover:text-rose-400">dinhhuonglann@gmail.com</a>
               </li>
               <li>
-                Phone: <a href="tel:+15551234567" className="transition hover:text-pink-600">+1 (555) 123-4567</a>
+                Phone: <a href="tel:+15551234567" className="transition hover:text-rose-400">+1 (555) 123-4567</a>
               </li>
               <li>
-                <Link href="/contact" className="font-medium text-zinc-900 transition hover:text-pink-600">
+                <Link href="/contact" className="font-medium text-zinc-100 transition hover:text-rose-400">
                   Send me a message!
                 </Link>
               </li>
@@ -95,7 +95,7 @@ export default function SiteFooter() {
           </section>
         </div>
 
-        <p className="border-t border-pink-100 pt-4 text-center text-xs text-zinc-500 sm:text-left">© {new Date().getFullYear()} Hailey. All rights reserved.</p>
+        <p className="border-t border-white/10 pt-4 text-center text-xs text-zinc-500 sm:text-left">© {new Date().getFullYear()} Hailey. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -14,9 +14,12 @@ export default function FlipButtonLink({
   className,
 }: FlipButtonLinkProps) {
   return (
-    <Link href={href} className={`btn-12 ${className ?? ""}`.trim()}>
-      <span>{backText ?? frontText}</span>
-      <span>{frontText}</span>
+    <Link
+      href={href}
+      className={`brand-button ${className ?? ""}`.trim()}
+      aria-label={backText ?? frontText}
+    >
+      {frontText}
     </Link>
   );
 }

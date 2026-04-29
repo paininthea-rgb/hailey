@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { FormEvent, useState } from "react";
-import HomeLogoLink from "@/components/shared/HomeLogoLink";
 
 type ApiSuccess = {
   message: string;
@@ -64,18 +63,14 @@ export default function ContactForm() {
   }
 
   return (
-    <main className="min-h-screen bg-pink-50 px-4 py-8 text-zinc-900 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-14">
-      <div className="mx-auto w-full max-w-3xl rounded-2xl border border-pink-100 bg-white p-5 shadow-sm sm:p-8 md:p-10">
-        <div className="mb-5 flex justify-center">
-          <HomeLogoLink />
-        </div>
-
-        <Link href="/" className="text-sm text-zinc-600 hover:text-zinc-900">
+    <main className="site-shell px-4 py-8 text-zinc-100 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-14">
+      <div className="site-card mx-auto w-full max-w-3xl rounded-2xl p-5 sm:p-8 md:p-10">
+        <Link href="/" className="text-sm text-zinc-300 transition hover:text-zinc-100">
           ← Back to home
         </Link>
 
-        <h1 className="mt-4 text-3xl font-light sm:text-4xl">Contact Hailey</h1>
-        <p className="mt-2 max-w-xl text-sm text-zinc-600 sm:text-base">
+        <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">Contact Hailey</h1>
+        <p className="mt-2 max-w-xl text-sm text-zinc-300 sm:text-base">
           Send your message or text me I will contact you as soon as possible. Looking forward to hearing from you!
         </p>
 
@@ -91,7 +86,7 @@ export default function ContactForm() {
               onChange={(event) => setName(event.target.value)}
               required
               placeholder="Hailey Dinh"
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
+              className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-zinc-100 placeholder:text-zinc-400 outline-none focus:border-rose-400"
             />
           </div>
 
@@ -106,7 +101,7 @@ export default function ContactForm() {
               onChange={(event) => setEmail(event.target.value)}
               required
               placeholder="hailey@example.com"
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
+              className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-zinc-100 placeholder:text-zinc-400 outline-none focus:border-rose-400"
             />
           </div>
 
@@ -121,7 +116,7 @@ export default function ContactForm() {
               onChange={(event) => setPhone(event.target.value)}
               required
               placeholder="+1 (555) 123-4567"
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
+              className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-zinc-100 placeholder:text-zinc-400 outline-none focus:border-rose-400"
             />
           </div>
 
@@ -136,14 +131,14 @@ export default function ContactForm() {
               required
               placeholder="Write your message here..."
               rows={5}
-              className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 outline-none focus:border-pink-500"
+              className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-zinc-100 placeholder:text-zinc-400 outline-none focus:border-rose-400"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="md:col-span-2 w-fit rounded-full bg-pink-500 px-6 py-2 text-sm font-medium text-white transition hover:bg-pink-600 disabled:cursor-not-allowed disabled:opacity-70"
+            className="brand-button md:col-span-2 w-fit disabled:cursor-not-allowed disabled:opacity-70"
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>
